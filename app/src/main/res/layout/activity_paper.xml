@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.one.frontend.interviewexam.PaperActivity">
+    <!--title-->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="10dp" android:layout_weight="1"
+                  android:background="#68978E" android:orientation="horizontal">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+                      android:orientation="horizontal" android:layout_marginLeft="15dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:text="time:"/>
+            <TextView android:layout_width="wrap_content" android:layout_gravity="center_vertical"
+                      android:layout_height="wrap_content" android:text="59:58"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+                      android:orientation="horizontal" android:layout_marginLeft="250dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="1" android:layout_gravity="center_vertical"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text=" / " android:layout_gravity="center_vertical"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="12" android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--body-->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:layout_weight="10" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:layout_marginTop="10dp" android:layout_marginLeft="10dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(单选题) "/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:text="请选出下列正确答案，答案只有一个哦。"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical" android:layout_marginLeft="15dp" android:layout_marginTop="10dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="我不是正确答案"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="我是正确答案"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="我不知道是不是正确答案"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--footer-->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="10dp"
+                  android:layout_weight="1" android:background="#68978E" android:orientation="horizontal">
+        <Button android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1"
+                android:text="上一题"/>
+        <Button android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1"
+                android:text="下一题"/>
+    </LinearLayout>
+</LinearLayout>

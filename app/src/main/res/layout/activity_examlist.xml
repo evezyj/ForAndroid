@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.one.frontend.interviewexam.ExamlistActivity">
+    <!--paper list 1-->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="100dp"
+                  android:orientation="horizontal">
+        <LinearLayout android:layout_width="70dp" android:layout_height="fill_parent"
+                      android:layout_weight="2" android:orientation="horizontal">
+            <ImageView android:layout_width="65dp" android:layout_height="65dp" android:src="@mipmap/java1"
+                       android:scaleType="fitXY" android:background="#00000000" android:layout_marginLeft="20dp"
+                       android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+                      android:layout_weight="5" android:orientation="vertical" android:layout_marginLeft="-15dp">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_weight="3">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Java 初级面试题"
+                          android:id="@+id/pd_name"
+                          android:textSize="18dp"
+                          android:paddingTop="15dp"
+                          android:paddingBottom="10dp"
+                          android:fontFamily="monospace"
+                />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_weight="1">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="题目数量: "
+                          android:textSize="14dp"
+                          android:paddingBottom="10dp"
+                          android:paddingLeft="5dp"
+                />
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="10"
+                          android:id="@+id/pd_subject_counts"
+                          android:textSize="14dp"
+                          android:paddingBottom="10dp"
+                          android:paddingLeft="5dp"
+                />
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_weight="1">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="所需时间: "
+                          android:textSize="14dp"
+                          android:paddingBottom="10dp"
+                          android:layout_weight="2"
+                          android:paddingLeft="5dp"
+                />
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="1 hour"
+                          android:id="@+id/pd_time"
+                          android:textSize="14dp"
+                          android:paddingBottom="10dp"
+                          android:paddingLeft="5dp"
+                />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="2dp">
+        <view android:layout_width="match_parent" android:layout_height="1.5dp"
+              android:background="@color/colorPrimary"/>
+    </LinearLayout>
+    <!--paper list 2-->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="100dp"
+                  android:orientation="horizontal">
+        <LinearLayout android:layout_width="70dp" android:layout_height="fill_parent"
+                      android:layout_weight="2" android:orientation="horizontal">
+            <ImageView android:layout_width="65dp" android:layout_height="65dp" android:src="@mipmap/java1"
+                       android:scaleType="fitXY" android:background="#00000000" android:layout_marginLeft="20dp"
+                       android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+                      android:layout_weight="5" android:orientation="vertical" android:layout_marginLeft="-15dp">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_weight="3">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Java 初级面试题"
+                          android:id="@+id/pd_name2"
+                          android:textSize="18dp"
+                          android:paddingTop="15dp"
+                          android:paddingBottom="10dp"
+                          android:fontFamily="monospace"
+                />
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_weight="1">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="题目数量: "
+                          android:textSize="14dp"
+                          android:paddingBottom="10dp"
+                          android:paddingLeft="5dp"
+                />
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="10"
+                          android:id="@+id/pd_subject_counts2"
+                          android:textSize="14dp"
+                          android:paddingBottom="10dp"
+                          android:paddingLeft="5dp"
+                />
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_weight="1">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="所需时间: "
+                          android:textSize="14dp"
+                          android:paddingBottom="10dp"
+                          android:layout_weight="2"
+                          android:paddingLeft="5dp"
+                />
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="1 hour"
+                          android:id="@+id/pd_time2"
+                          android:textSize="14dp"
+                          android:paddingBottom="10dp"
+                          android:paddingLeft="5dp"
+                />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="2dp">
+        <view android:layout_width="match_parent" android:layout_height="1.5dp"
+              android:background="@color/colorPrimary"/>
+    </LinearLayout>
+</LinearLayout>
