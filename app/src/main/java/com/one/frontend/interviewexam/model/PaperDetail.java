@@ -55,4 +55,16 @@ public class PaperDetail {
     public void setType(String type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "PaperDetail{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", count=" + count +
+                ", time='" + time + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

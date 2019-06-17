@@ -9,22 +9,15 @@
     <!--title-->
     <LinearLayout android:layout_width="match_parent" android:layout_height="10dp" android:layout_weight="1"
                   android:background="#68978E" android:orientation="horizontal">
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
-                      android:orientation="horizontal" android:layout_marginLeft="15dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:layout_gravity="center_vertical"
-                      android:text="time:"/>
-            <TextView android:layout_width="wrap_content" android:layout_gravity="center_vertical"
-                      android:layout_height="wrap_content" android:text="59:58"/>
-        </LinearLayout>
+
         <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
                       android:orientation="horizontal" android:layout_marginLeft="250dp">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:text="1" android:layout_gravity="center_vertical"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text=" / " android:layout_gravity="center_vertical"/>
+                      android:text=" / " android:layout_gravity="center_vertical" android:id="@+id/count"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="12" android:layout_gravity="center_vertical"/>
+                      android:text="12" android:layout_gravity="center_vertical" android:id="@+id/totalCount"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -35,35 +28,23 @@
                       android:layout_marginTop="10dp" android:layout_marginLeft="10dp">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(单选题) "/>
             <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:text="请选出下列正确答案，答案只有一个哦。"/>
+                      android:text="请选出下列正确答案，答案只有一个哦。" android:id="@+id/question"/>
         </LinearLayout>
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="vertical" android:layout_marginLeft="15dp" android:layout_marginTop="10dp">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:text="我不是正确答案"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:text="我是正确答案"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:text="我不知道是不是正确答案"/>
-            </LinearLayout>
+            <ListView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/list_options"
+            ></ListView>
         </LinearLayout>
     </LinearLayout>
 
     <!--footer-->
     <LinearLayout android:layout_width="match_parent" android:layout_height="10dp"
-                  android:layout_weight="1" android:background="#68978E" android:orientation="horizontal">
+                  android:layout_weight="1" android:background="@color/colorPrimary" android:orientation="horizontal">
         <Button android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1"
-                android:text="上一题"/>
+                android:text="上一题" android:textColor="#ffffff" android:id="@+id/lastBtn" android:background="@color/colorPrimary"/>
+       <TextView android:layout_width="2dp" android:layout_height="match_parent" android:textColor="#ffffff" android:text="|"/>
         <Button android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1"
-                android:text="下一题"/>
+                android:text="下一题" android:textColor="#ffffff" android:id="@+id/nextBtn" android:background="@color/colorPrimary"/>
     </LinearLayout>
 </LinearLayout>

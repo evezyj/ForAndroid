@@ -1,0 +1,70 @@
+{
+  "paperDetail": {
+    "id": 1,
+    "name": "Java 初级试卷",
+    "description": "选拔初级java开发人员",
+    "count": 2,
+    "time": "1 hour",
+    "type": "J"
+  },
+  "paperSubjects": [
+    {
+      "id": 1,
+      "pdId": 1,
+      "subjectId": 1,
+      "subjectName": "java所定义的版本中不包括：_____。",
+      "subjectOptions": [
+        {
+          "id": 1,
+          "answerDesccription": "JAVA2 EE",
+          "answerOption": "A",
+          "psId": 1,
+          "true": false
+        },
+        {
+          "id": 2,
+          "answerDesccription": " JAVA2 Card",
+          "answerOption": "B",
+          "psId": 1,
+          "true": false
+        },
+        {
+          "id": 3,
+          "answerDesccription": " JAVA2 HE",
+          "answerOption": "C",
+          "psId": 1,
+          "true": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "pdId": 1,
+      "subjectId": 2,
+      "subjectName": "以下哪个是不合法的标识符。",
+      "subjectOptions": [
+        {
+          "id": 4,
+          "answerDesccription": "STRING",
+          "answerOption": "A",
+          "psId": 2,
+          "true": false
+        },
+        {
+          "id": 5,
+          "answerDesccription": "void",
+          "answerOption": "B",
+          "psId": 2,
+          "true": true
+        },
+        {
+          "id": 6,
+          "answerDesccription": "x3x;",
+          "answerOption": "C",
+          "psId": 2,
+          "true": false
+        }
+      ]
+    }
+  ]
+}
