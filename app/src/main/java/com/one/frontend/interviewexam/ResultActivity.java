@@ -3,6 +3,7 @@ package com.one.frontend.interviewexam;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.one.frontend.interviewexam.model.UserInfo;
@@ -19,7 +20,11 @@ public class ResultActivity extends AppCompatActivity {
         Log.e("activity info userid", String.valueOf(userId));
         bindView();
         GetUserInfoTask task = new GetUserInfoTask();
-
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
         task.setCallBack(new GetUserInfoTask.Callback() {
             @Override
             public void setObj(UserInfo userInfo) {
@@ -45,5 +50,11 @@ public class ResultActivity extends AppCompatActivity {
     public void bindView() {
         count = findViewById(R.id.count);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish(); // back button
+        return true;
     }
 }

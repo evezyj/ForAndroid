@@ -19,13 +19,16 @@
     </LinearLayout>
 
     <LinearLayout android:layout_marginTop="50dp" android:layout_width="match_parent"
-                  android:paddingBottom="18dp"  android:paddingTop="18dp" android:layout_height="wrap_content" android:orientation="vertical" android:background="#ffffff" android:layout_marginLeft="20dp" android:layout_marginRight="20dp">
+                  android:paddingBottom="18dp" android:paddingTop="18dp" android:layout_height="wrap_content"
+                  android:orientation="vertical" android:background="#ffffff" android:layout_marginLeft="20dp"
+                  android:layout_marginRight="20dp">
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:text="您的得分" android:layout_marginTop="20dp" android:layout_gravity="center"
                   android:textSize="20dp"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:id="@+id/count" android:textColor="#222222" android:text="5"  android:layout_gravity="center" android:textSize="80dp"/>
+                  android:id="@+id/count" android:textColor="#222222" android:text="5" android:layout_gravity="center"
+                  android:textSize="80dp"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:text="还要继续加油哦！FIGHTING!" android:layout_marginTop="12dp" android:layout_gravity="center"
                   android:textSize="16dp"/>
@@ -35,7 +38,10 @@
     <LinearLayout android:layout_marginTop="50dp" android:layout_width="match_parent"
                   android:layout_height="wrap_content" android:orientation="vertical">
 
-        <Button android:layout_height="wrap_content" android:layout_marginTop="15dp" android:layout_marginBottom="15dp" android:layout_gravity="center" android:layout_width="wrap_content" android:paddingLeft="18dp" android:paddingRight="18dp" android:textColor="#ffffff" android:text="返回首页" android:textSize="20dp" android:background="#313131"/>
+        <Button android:layout_height="wrap_content" android:layout_marginTop="15dp" android:layout_marginBottom="15dp"
+                android:layout_gravity="center" android:layout_width="wrap_content" android:paddingLeft="18dp"
+                android:paddingRight="18dp" android:textColor="#ffffff" android:text="返回首页" android:textSize="20dp"
+                android:background="#313131"/>
 
     </LinearLayout>
 

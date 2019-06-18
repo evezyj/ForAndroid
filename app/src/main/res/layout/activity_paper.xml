@@ -6,28 +6,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="com.one.frontend.interviewexam.PaperActivity">
-    <!--title-->
-    <LinearLayout android:layout_width="match_parent" android:layout_height="10dp" android:layout_weight="1"
-                  android:background="#68978E" android:orientation="horizontal">
-
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
-                      android:orientation="horizontal" android:layout_marginLeft="250dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="1" android:layout_gravity="center_vertical"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text=" / " android:layout_gravity="center_vertical" android:id="@+id/count"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="12" android:layout_gravity="center_vertical" android:id="@+id/totalCount"/>
-        </LinearLayout>
-    </LinearLayout>
 
     <!--body-->
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                   android:layout_weight="10" android:orientation="vertical">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:layout_marginTop="10dp" android:layout_marginLeft="10dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="(单选题) "/>
             <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:layout_marginTop="15dp"
+                      android:layout_marginLeft="18dp" android:textSize="18dp" android:textColor="#313131"
                       android:text="请选出下列正确答案，答案只有一个哦。" android:id="@+id/question"/>
         </LinearLayout>
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -42,9 +29,13 @@
     <LinearLayout android:layout_width="match_parent" android:layout_height="10dp"
                   android:layout_weight="1" android:background="@color/colorPrimary" android:orientation="horizontal">
         <Button android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1"
-                android:text="上一题" android:textColor="#ffffff" android:id="@+id/lastBtn" android:background="@color/colorPrimary"/>
-       <TextView android:layout_width="2dp" android:layout_height="match_parent" android:textColor="#ffffff" android:text="|"/>
+                android:text="上一题" android:textColor="#ffffff" android:id="@+id/lastBtn"
+                android:background="@color/colorPrimary" android:textSize="20dp"/>
+        <ImageView android:layout_width="2dp" android:layout_height="match_parent"
+                   android:background="@mipmap/white_line" android:layout_marginBottom="3dp"
+                   android:layout_marginTop="3dp"/>
         <Button android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1"
-                android:text="下一题" android:textColor="#ffffff" android:id="@+id/nextBtn" android:background="@color/colorPrimary"/>
+                android:text="下一题" android:textColor="#ffffff" android:id="@+id/nextBtn"
+                android:background="@color/colorPrimary" android:textSize="20dp"/>
     </LinearLayout>
 </LinearLayout>

@@ -64,7 +64,7 @@ public class SubjectOptionAdapter extends BaseAdapter {
         convertView.setTag(viewHolder);
 
         viewHolder.answerDesc.setText(subjectOptions.get(position).getAnswerDesccription());
-        viewHolder.answerOption.setText(subjectOptions.get(position).getAnswerOption());
+        //viewHolder.answerOption.setText(subjectOptions.get(position).getAnswerOption());
         viewHolder.answerOption.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean b) {

@@ -77,8 +77,6 @@ public class PaperActivity extends AppCompatActivity implements View.OnClickList
 
     private SubjectInfo initUI(SubjectInfo subjectInfo) {
         TextView question = (TextView) findViewById(R.id.question);
-        TextView totalCount = (TextView) findViewById(R.id.totalCount);
-        totalCount.setText(String.valueOf(subjectInfo.getPaperDetail().getCount()));
         question.setText(subjectInfo.getPaperSubjects().get(position).getSubjectName());
         if (position == (subjectInfo.getPaperDetail().getCount() - 1)) {
             // Toast.makeText(this, "已经是最后一题了" + position, Toast.LENGTH_SHORT).show();
