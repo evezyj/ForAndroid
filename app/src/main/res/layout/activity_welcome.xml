@@ -9,9 +9,12 @@
 
     <LinearLayout android:layout_width="match_parent" android:background="@android:color/white"
                   android:orientation="vertical" android:layout_height="match_parent" android:id="@+id/imgWrap">
-        <ImageView android:layout_width="315dp" android:layout_height="315dp" android:src="@mipmap/logo_v1"
+        <ImageView android:layout_width="215dp" android:layout_height="215dp" android:src="@mipmap/black_logo"
                    android:id="@+id/img_show" android:contentDescription="TODO" android:layout_gravity="center"
                    android:layout_marginTop="205dp" android:scaleType="fitXY"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_gravity="center" android:layout_marginTop="15dp" android:textSize="18dp"
+                  android:text="K O N W L E D G E   I S   P O W E R" android:scaleType="fitXY"/>
     </LinearLayout>
 
 </LinearLayout>

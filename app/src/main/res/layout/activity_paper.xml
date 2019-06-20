@@ -5,20 +5,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="#F8F8F8"
         tools:context="com.one.frontend.interviewexam.PaperActivity">
 
-    <!--body-->
+    <!--body-->3
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:layout_weight="10" android:orientation="vertical">
+                  android:layout_weight="10" android:orientation="vertical" android:layout_marginLeft="30dp"
+                  android:layout_marginRight="30dp" android:layout_marginTop="40dp">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:layout_marginTop="10dp" android:layout_marginLeft="10dp">
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:layout_marginTop="15dp"
-                      android:layout_marginLeft="18dp" android:textSize="18dp" android:textColor="#313131"
-                      android:text="请选出下列正确答案，答案只有一个哦。" android:id="@+id/question"/>
+                      android:layout_marginTop="30dp" android:layout_marginBottom="30dp"
+                      android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textSize="18dp" android:textColor="#232323"
+                      android:text="1." android:id="@+id/questionId"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="18dp"
+                      android:textColor="#232323"
+                      android:text="请选出下列正确答案，下列正确答案答案只有一个哦。" android:id="@+id/question"/>
         </LinearLayout>
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:orientation="vertical" android:layout_marginLeft="15dp" android:layout_marginTop="10dp">
+                      android:orientation="vertical">
             <ListView android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:id="@+id/list_options"
             ></ListView>
