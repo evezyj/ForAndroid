@@ -24,7 +24,7 @@
                        android:background="@mipmap/check" android:layout_gravity="center"
             />
             <TextView android:layout_marginTop="15dp" android:layout_gravity="center" android:layout_width="wrap_content"
-                      android:layout_height="50dp" android:text="Congradulations!" android:textSize="20dp"/>
+                      android:layout_height="50dp" android:text="Congradulations !" android:textSize="20dp"/>
         </LinearLayout>
 
         <LinearLayout android:layout_marginTop="50dp" android:layout_width="match_parent"
