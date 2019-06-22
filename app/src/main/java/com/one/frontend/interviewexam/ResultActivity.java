@@ -1,17 +1,20 @@
 package com.one.frontend.interviewexam;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.ListView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import com.one.frontend.interviewexam.model.UserInfo;
 import com.one.frontend.interviewexam.task.GetUserInfoTask;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView count;
-
+    private Button returnHome;
+    private TextView resultTxt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,27 +23,16 @@ public class ResultActivity extends AppCompatActivity {
         Log.e("activity info userid", String.valueOf(userId));
         bindView();
         GetUserInfoTask task = new GetUserInfoTask();
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeButtonEnabled(true);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        resultTxt = findViewById(R.id.resultTxt);
+        Button leftButton = (Button) findViewById(R.id.leftButton);
+        leftButton.setOnClickListener(this);
+        returnHome.setOnClickListener(this);
         task.setCallBack(new GetUserInfoTask.Callback() {
             @Override
             public void setObj(UserInfo userInfo) {
                 Log.i("ac ", "userInfo " + userInfo.toString());
                 count.setText(String.valueOf(userInfo.getCountCorrect()*10));
-                String str = userInfo.getTrueSubject();
-                Log.i("ac ", " str: " + str);
-                str = str.substring(str.indexOf("[") + 1, str.indexOf("]"));
-                Log.i("ac ", " str: " + str);
 
-                String[] a = str.split(",");
-                for(String s : a){
-                    Log.i("ac ", " s: " + s);
-                }
-
-                Log.i("ac ", " " + userInfo.toString());
             }
         });
         task.execute(userId);
@@ -49,12 +41,20 @@ public class ResultActivity extends AppCompatActivity {
 
     public void bindView() {
         count = findViewById(R.id.count);
-
+        returnHome = findViewById(R.id.returnHome);
     }
 
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        finish(); // back button
-        return true;
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.returnHome:
+                Intent intent = new Intent(ResultActivity.this, UserInfoActivity.class);
+                startActivity(intent);
+
+            case R.id.leftButton:
+                Intent intent2 = new Intent(ResultActivity.this, UserInfoActivity.class);
+                startActivity(intent2);
+        }
     }
 }

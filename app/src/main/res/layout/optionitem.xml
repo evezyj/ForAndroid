@@ -13,7 +13,7 @@
                   android:layout_marginRight="20dp" android:layout_marginTop="10dp" android:layout_marginBottom="10dp"
                   android:textSize="16dp" android:lineSpacingExtra="1.3dp" android:letterSpacing="0.1"
                   android:layout_gravity="center_vertical"
-                  android:text="我不是正确答案我不是正确答案我不是正确答案我不是正确答案" android:textColor="#969696"
+                  android:text="我不是正确答案我不是正确答案我不是正确答案我不是正确答案" android:textColor="@drawable/itemcolor"
                   android:id="@+id/answerDesccription"/>
     </LinearLayout>
 

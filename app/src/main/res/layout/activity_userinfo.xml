@@ -10,20 +10,15 @@
         tools:context="com.one.frontend.interviewexam.UserInfoActivity">
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:orientation="vertical" android:layout_marginTop="40dp">
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:text="ONE" android:textSize="70dp"
-                  android:layout_marginBottom="5dp" android:layout_marginTop="50dp"
-                  android:textColor="#FFFFFF" android:gravity="center" android:textScaleX="1.3"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:text="O N E    I S    A L L" android:textSize="14dp"
-                  android:layout_marginBottom="10dp" android:layout_marginTop="5dp"
-                  android:textColor="#FFFFFF" android:gravity="center" android:textScaleX="1.5"/>
+                  android:orientation="vertical" android:layout_marginTop="80dp">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                   android:layout_marginBottom="5dp" android:background="@mipmap/logo2" android:layout_gravity="center" android:layout_marginTop="50dp"/>
+
     </LinearLayout>
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="80dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="40dp">
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:text="请输入你的以下信息：" android:textSize="18dp"
+                  android:text="Please input your info：" android:textSize="18dp"
                   android:layout_marginBottom="10dp" android:layout_marginTop="25dp" android:layout_marginLeft="102dp"
                   android:textColor="#D4D4D4"/>
     </LinearLayout>
@@ -33,30 +28,30 @@
 
         <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
             <TextView android:layout_width="56dp" android:layout_height="fill_parent"
-                      android:text="姓 名: " android:gravity="center_vertical"
+                      android:text="Name: " android:gravity="center_vertical"
                       android:textColor="#D4D4D4" android:textSize="16dp"
                       android:id="@+id/nameTxt"/>
             <EditText android:layout_width="216dp" android:layout_height="match_parent" android:id="@+id/name"
-                      android:textColor="#D4D4D4" android:hint="e.g.Cicy"
-                      android:textSize="14dp"/>
+                      android:textColor="#D4D4D4" android:hint="e.g.Name"
+                      android:textSize="14dp" android:theme="@style/MyEditText"/>
         </LinearLayout>
         <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
             <TextView android:layout_width="56dp" android:layout_height="fill_parent"
-                      android:textColor="#D4D4D4" android:text="邮 箱: "
+                      android:textColor="#D4D4D4" android:text="Email: " android:textColorHint="#929292"
                       android:gravity="center_vertical"
                       android:textSize="16dp" android:id="@+id/emailTxt"/>
             <EditText android:layout_width="216dp" android:layout_height="match_parent" android:id="@+id/email"
-                      android:textColor="#D4D4D4" android:hint="e.g.123456@163.com"
-                      android:textSize="14dp" />
+                      android:textColor="#D4D4D4" android:hint="e.g.123456@163.com" android:textColorHint="#929292"
+                      android:textSize="14dp" android:theme="@style/MyEditText"/>
         </LinearLayout>
         <LinearLayout android:layout_width="match_parent" android:layout_height="50dp" android:orientation="horizontal">
             <TextView android:layout_width="56dp" android:layout_height="fill_parent"
-                      android:textColor="#D4D4D4" android:text="年 龄: "
+                      android:textColor="#D4D4D4" android:text="Age: " android:layout_marginRight="2dp"
                       android:gravity="center_vertical"
                       android:textSize="16dp" android:id="@+id/ageTxt"/>
             <EditText android:layout_width="216dp" android:layout_height="match_parent" android:id="@+id/age"
-                      android:textColor="#D4D4D4" android:hint="e.g.18"
-                      android:textSize="14dp"/>
+                      android:textColor="#D4D4D4" android:hint="e.g.18" android:textColorHint="#929292"
+                      android:textSize="14dp"  android:theme="@style/MyEditText"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -5,10 +5,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import com.one.frontend.interviewexam.model.UserInfo;
 import com.one.frontend.interviewexam.task.AddUserBaseInfoTask;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText name;
@@ -19,6 +24,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_userinfo);
         bindView();
         nextBtn = findViewById(R.id.nextBtn);
@@ -41,22 +47,35 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 Log.i("userActivity","start ");
                 AddUserBaseInfoTask task = new AddUserBaseInfoTask();
 
-                UserInfo userInfo = new UserInfo();
-                userInfo.setAge(Integer.parseInt(age.getText().toString()));
-                userInfo.setEmail(email.getText().toString());
-                userInfo.setName(name.getText().toString());
-                task.execute(userInfo);
-                task.setCallBack(new AddUserBaseInfoTask.Callback() {
-                    @Override
-                    public void setResult(Integer result) {
-                        //userId = result;
-                        userId = result;
-                        startNextActivity(result);
-                        Log.i("userId","result： "+result);
-                    }
 
-                });
-                Log.i("userActivity","end "+userInfo.toString());
+                if(name.getText().toString().isEmpty()){
+                    Toast.makeText(this, "Name can not be null!", Toast.LENGTH_LONG).show();
+                }else if(email.getText().toString().isEmpty()){
+                    Toast.makeText(this, "Email can not be null!", Toast.LENGTH_LONG).show();
+                }else if(!isEmail(email.getText().toString().trim()) ){
+                    Toast.makeText(this, "Email format incorrect!", Toast.LENGTH_LONG).show();
+                }else if(age.getText().toString().isEmpty()){
+                    Toast.makeText(this, "Age can not be null!", Toast.LENGTH_LONG).show();
+                }else if(!isNumeric(age.getText().toString())){
+                    Toast.makeText(this, "Age should be number!", Toast.LENGTH_LONG).show();
+                }else{
+                    UserInfo userInfo = new UserInfo();
+                    userInfo.setAge(Integer.parseInt(age.getText().toString()));
+                    userInfo.setEmail(email.getText().toString());
+                    userInfo.setName(name.getText().toString());
+                    task.execute(userInfo);
+                    task.setCallBack(new AddUserBaseInfoTask.Callback() {
+                        @Override
+                        public void setResult(Integer result) {
+                            //userId = result;
+                            userId = result;
+                            startNextActivity(result);
+                            Log.i("userId","result： "+result);
+                        }
+
+                    });
+                    Log.i("userActivity","end "+userInfo.toString());
+                }
 
         }
     }
@@ -67,5 +86,22 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         intent.putExtra("userId",result);
         setResult(RESULT_OK, intent);
         startActivity(intent);
+    }
+
+    public static boolean isEmail(String email){
+        if (null==email || "".equals(email)) return false;
+        Pattern p = Pattern.compile("\\w+@(\\w+.)+[a-z]{2,3}"); //简单匹配
+        Matcher m = p.matcher(email);
+        Log.i("m.matches()","m.matches()" + " 12 " +m.matches());
+        return m.matches();
+    }
+
+    public boolean isNumeric(String str){
+        Pattern pattern = Pattern.compile("[0-9]*");
+        Matcher isNum = pattern.matcher(str);
+        if( !isNum.matches() ){
+            return false;
+        }
+        return true;
     }
 }

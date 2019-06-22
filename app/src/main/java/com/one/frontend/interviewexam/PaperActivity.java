@@ -1,8 +1,10 @@
 package com.one.frontend.interviewexam;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
@@ -53,6 +55,8 @@ public class PaperActivity extends AppCompatActivity implements View.OnClickList
         Log.e("activity info userid", "executing...456" + userId);
         mContext = PaperActivity.this;
         listView = findViewById(R.id.list_options);
+        Button leftButton = (Button) findViewById(R.id.leftButton);
+        leftButton.setOnClickListener(this);
         subjectInfoApi = new SubjectInfoApi();
         checkBoxIDList = new ArrayList<Integer>();
         answerOption = (CheckBox) findViewById(R.id.answerOption);
@@ -76,11 +80,15 @@ public class PaperActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private SubjectInfo initUI(SubjectInfo subjectInfo) {
+        TextView questionId = findViewById(R.id.questionId);
         TextView question = (TextView) findViewById(R.id.question);
+        TextView title = findViewById(R.id.titleText);
+        title.setText(subjectInfo.getPaperDetail().getName());
+        questionId.setText(subjectInfo.getPaperSubjects().get(position).getSubjectId()+". ");
         question.setText(subjectInfo.getPaperSubjects().get(position).getSubjectName());
         if (position == (subjectInfo.getPaperDetail().getCount() - 1)) {
             // Toast.makeText(this, "已经是最后一题了" + position, Toast.LENGTH_SHORT).show();
-            nextBtn.setText("提交");
+            nextBtn.setText("Submit");
         }
         return subjectInfo;
     }
@@ -90,12 +98,14 @@ public class PaperActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
 
+            case R.id.leftButton:
+                showDialog();
             case R.id.lastBtn:
                 if (position < 1) {
-                    Toast.makeText(this, "已经是第一题了" + position, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "It is the first question!" + position, Toast.LENGTH_SHORT).show();
                     break;
                 }
-                nextBtn.setText("下一题");
+                nextBtn.setText("Next");
                 position--;
                 adapter.notifyDataSetChanged();
                 adapter = new SubjectOptionAdapter(subjectInfoObj.getPaperSubjects().get(position).getSubjectOptions(), mContext, checkBoxIDList);
@@ -108,7 +118,7 @@ public class PaperActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
             case R.id.nextBtn:
-                if (nextBtn.getText().equals("提交")) {
+                if (nextBtn.getText().equals("Submit")) {
                     Log.e("activity info option 提交", "executing..." + adapter.getCheckBoxIDList().toString());
                     List<Integer> trueAnswers = new ArrayList<Integer>();
                     List<Integer> falseAnswers = new ArrayList<Integer>();
@@ -170,9 +180,10 @@ public class PaperActivity extends AppCompatActivity implements View.OnClickList
                 } else {
                     //不是提交
                     position++;
+
                     if (position >= (subjectInfoObj.getPaperDetail().getCount() - 1)) {
                         // Toast.makeText(this, "已经是最后一题了" + position, Toast.LENGTH_SHORT).show();
-                        nextBtn.setText("提交");
+                        nextBtn.setText("Submit");
                         adapter.notifyDataSetChanged();
                         adapter = new SubjectOptionAdapter(subjectInfoObj.getPaperSubjects().get(position).getSubjectOptions(), mContext, checkBoxIDList);
                         listView.setAdapter(adapter);
@@ -180,10 +191,50 @@ public class PaperActivity extends AppCompatActivity implements View.OnClickList
                         Log.e("activity info option", "executing..." + adapter.getCheckBoxIDList().size());
 
                         break;
+                    }else{
+                        adapter.notifyDataSetChanged();
+                        adapter = new SubjectOptionAdapter(subjectInfoObj.getPaperSubjects().get(position).getSubjectOptions(), mContext, checkBoxIDList);
+                        listView.setAdapter(adapter);
+                        initUI(subjectInfoObj);
+                        Log.e("activity info option", "executing..." + adapter.getCheckBoxIDList().size());
+                        for (int i = 0; i < adapter.getCheckBoxIDList().size(); i++) {
+
+                            Log.e("activity info option", "executing..." + adapter.getCheckBoxIDList().get(i).toString());
+                        }
+                        break;
                     }
                 }
         }
     }
+
+    private void showDialog() {
+        AlertDialog alert=new AlertDialog.Builder(PaperActivity.this).create();
+
+        alert.setTitle("ONE？");
+        alert.setMessage("Are you sure return home？");
+        //添加取消按钮
+        alert.setButton(DialogInterface.BUTTON_NEGATIVE,"NO",new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+        //添加"确定"按钮
+        alert.setButton(DialogInterface.BUTTON_POSITIVE,"YES", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface arg0, int arg1) {
+                Intent intent = new Intent(PaperActivity.this, ExamlistActivity.class);
+                startActivity(intent);
+            }
+        });
+        alert.show();
+    }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

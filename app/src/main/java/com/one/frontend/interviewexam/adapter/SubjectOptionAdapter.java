@@ -58,20 +58,24 @@ public class SubjectOptionAdapter extends BaseAdapter {
         final ViewHolder viewHolder = new ViewHolder();
 
         convertView = LayoutInflater.from(context).inflate(R.layout.optionitem, parent, false);
-
+       // viewHolder.answerId = convertView.findViewById(R.id.questionId);
         viewHolder.answerDesc = (TextView) convertView.findViewById(R.id.answerDesccription);
         viewHolder.answerOption = (CheckBox) convertView.findViewById(R.id.answerOption);
         convertView.setTag(viewHolder);
-
+        //viewHolder.answerId.setText(subjectOptions.get(position).getId());
         viewHolder.answerDesc.setText(subjectOptions.get(position).getAnswerDesccription());
         //viewHolder.answerOption.setText(subjectOptions.get(position).getAnswerOption());
         viewHolder.answerOption.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean b) {
                 if (b ) {
+                    viewHolder.answerOption.setChecked(true);
+                    viewHolder.answerDesc.setTextColor(R.drawable.ic_launcher_background);
                     // Log.e("activity info viewHolder be", "executing..." + viewHolder.answerOption.getText().toString());
                     checkBoxIDList.add(subjectOptions.get(position).getId());
                     // Log.e("activity info viewHolder", "executing..." + viewHolder.answerOption.getText().toString());
+                }else{
+                    viewHolder.answerOption.setChecked(false);
                 }
             }
         });
@@ -81,5 +85,6 @@ public class SubjectOptionAdapter extends BaseAdapter {
     private static class ViewHolder {
         TextView answerDesc;
         CheckBox answerOption;
+        //TextView answerId;
     }
 }
